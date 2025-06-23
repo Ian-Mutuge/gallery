@@ -30,10 +30,14 @@ pipeline {
                 sh 'curl https://api.render.com/deploy/srv-d1bu2v15pdvs73e8f760?key=mPRZ7QqAzAY'
             }
         }
+        stage('Send successful deployment message') {
+            steps {
+                slackSend channel: '#ian_ip1', message: 'Application has been deployed successfully'
+            }
         
         }
     }
-
+}
 
 
 

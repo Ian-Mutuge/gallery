@@ -20,6 +20,7 @@ pipeline {
             }
         }
         stage ('Formatted Jenkins'){
+            steps {
         post {
         
         failure {
@@ -35,6 +36,7 @@ pipeline {
                     """,
                 subject: "Status: FAILURE -Job \'${env.JOB_NAME}:${env.BUILD_NUMBER}\'", 
                 to: 'mvtuge@gmail.com'
+        }
         }
         }
         }

@@ -24,7 +24,7 @@ pipeline {
         }
         stage('Send successful deployment message') {
             steps {
-                slackSend channel: '#ian_ip1', message: 'Application has been deployed successfully'
+                slackSend channel: '#ian_ip1', message: 'Build #${BUILD_ID} was successfull. The application has been deployed successfully on the url https://gallery-zt5r.onrender.com/'
             }
         
         }

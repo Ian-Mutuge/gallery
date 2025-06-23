@@ -19,7 +19,7 @@ pipeline {
                 sh 'node server'
             }
         }
-        
+        stage ('Formatted Jenkins'){
         post {
         
         failure {
@@ -35,6 +35,7 @@ pipeline {
                     """,
                 subject: "Status: FAILURE -Job \'${env.JOB_NAME}:${env.BUILD_NUMBER}\'", 
                 to: 'mvtuge@gmail.com'
+        }
         }
         }
         stage('Deploying to render') {

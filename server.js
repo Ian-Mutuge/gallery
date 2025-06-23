@@ -17,7 +17,7 @@ let dbName = 'darkroom';
 
 // connecting the database
 
-const MONGODB_URI = process.env.MONGODB ||`${mongodb_url}${dbName}`
+const MONGODB_URI = process.env.MONGODB || config.mongoURI[app.settings.env]||`${mongodb_url}${dbName}`
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true  },(err)=>{
     if (err) {
         console.log(err)

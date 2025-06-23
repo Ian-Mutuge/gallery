@@ -35,7 +35,7 @@ mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true 
 
 
 
-// View Engine
+// View Engines
 app.set('view engine', 'ejs');
 
 // Set up the public folder;
